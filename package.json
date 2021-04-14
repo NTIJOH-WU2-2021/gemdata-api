@@ -1,0 +1,27 @@
+{
+  "name": "gemdata-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NTIJOH-WU2-2021/gemdata-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NTIJOH-WU2-2021/gemdata-api/issues"
+  },
+  "homepage": "https://github.com/NTIJOH-WU2-2021/gemdata-api#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cheerio": "^1.0.0-rc.6",
+    "deepmerge": "^4.2.2",
+    "he": "^1.2.0",
+    "json2csv": "^5.0.6",
+    "slugify": "^1.5.0"
+  }
+}

@@ -1,0 +1,90 @@
+openapi: 3.0.0
+info:
+  title: 'Sofodata - gem_database'
+  description: 'gemstone and gemology information database'
+  version: '1'
+servers:
+  - url: 'https://genesis.sofodata.com/v1'
+paths:
+  '/rVjsrm':
+    get:
+      summary: 'List all records'
+      operationId: 'listRecords'
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - name: limit
+          in: query
+          description: 'How many items to return at one time (default 20, max 100)'
+          required: false
+          schema:
+            type: integer
+            format: int32
+        - name: 'id'
+          in: query
+          description: 'Filter results based on this parameter'
+          required: false
+          schema:
+             type: number
+             format: int64
+             nullable: true
+      responses:
+        '200':
+          description: 'A array of records'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/records'
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: 'X-API-KEY'
+  schemas:
+    records:
+      type: array
+      description: 'A representation of records'
+      items:
+        $ref: '#/components/schemas/record'
+    record:
+      type: object
+      description: 'A representation of a record'
+      properties:
+        id:
+           type: number
+           format: int64
+           nullable: true
+        name:
+           type: string
+           nullable: true
+        description:
+           type: string
+           nullable: true
+        img:
+           type: string
+           nullable: true
+        gemstone:
+           type: string
+           nullable: true
+        location_of_origin:
+           type: string
+           nullable: true
+        origin:
+           type: string
+           nullable: true
+        treatments:
+           type: string
+           nullable: true
+        cut_type:
+           type: string
+           nullable: true
+        weight:
+           type: string
+           nullable: true
+        dimensions:
+           type: string
+           nullable: true
+        cut_by:
+           type: string
+           nullable: true
